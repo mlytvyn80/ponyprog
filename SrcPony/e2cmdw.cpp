@@ -1128,9 +1128,31 @@ void e2CmdWindow::addAT90Struct()
 {
 	menuToGroup *mTmp = new menuToGroup();
 
-	mTmp->mnu = new QMenu("AVR micro");
+	mTmp->mnu = new QMenu("AVR AT90");
 	mTmp->grp = new QActionGroup(this);
-	mTmp->type << AT90SXX;
+	mTmp->type << AVRAT90;
+
+	initMenuVector(mTmp);
+
+	connect(mTmp->grp, SIGNAL(triggered(QAction *)), this, SLOT(onSelectAVR(QAction *)));
+	deviceMenu << *mTmp;
+
+	mTmp = new menuToGroup();
+
+	mTmp->mnu = new QMenu("AVR mega");
+	mTmp->grp = new QActionGroup(this);
+	mTmp->type << AVRMega;
+
+	initMenuVector(mTmp);
+
+	connect(mTmp->grp, SIGNAL(triggered(QAction *)), this, SLOT(onSelectAVR(QAction *)));
+	deviceMenu << *mTmp;
+
+	mTmp = new menuToGroup();
+
+	mTmp->mnu = new QMenu("AVR tiny");
+	mTmp->grp = new QActionGroup(this);
+	mTmp->type << AVRTiny;
 
 	initMenuVector(mTmp);
 

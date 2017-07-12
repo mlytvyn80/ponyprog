@@ -348,7 +348,9 @@ void e2AppWinInfo::SetEEProm(unsigned long id)
 		eep = eep24xx5;
 		break;
 
-	case AT90SXX:
+	case AVRTiny:
+	case AVRMega:
+	case AVRAT90:
 	{
 		eep = eepAt90s;
 

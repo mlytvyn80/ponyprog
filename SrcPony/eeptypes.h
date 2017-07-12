@@ -54,7 +54,9 @@
 #define E24256          0x020080
 #define E24512          0x020100
 
-#define AT90SXX         0x03
+#define AVRAT90         0x03
+#define AVRTiny         0x14
+#define AVRMega         0x15
 // Sub types
 #define AT90S0000       0x030000
 #define AT90S1200       0x030002
@@ -62,8 +64,8 @@
 #define AT90S4414       0x030004
 #define AT90S8515       0x030005
 
-#define ATmega603       0x030008
-#define ATmega103       0x030009
+#define ATmega603       0x150008
+#define ATmega103       0x150009
 
 #define AT90S2323       0x03000A
 #define AT90S2343       0x03000B
@@ -73,50 +75,50 @@
 #define AT90S8534       0x03000F
 #define AT90S8535       0x030010
 
-#define ATtiny22        0x030011
-#define ATtiny12        0x030012
-#define ATtiny13        0x030013
-#define ATtiny15        0x030014
+#define ATtiny22        0x140011
+#define ATtiny12        0x140012
+#define ATtiny13        0x140013
+#define ATtiny15        0x140014
 
-#define ATmega8515      0x030015
-#define ATmega8535      0x030016
+#define ATmega8515      0x150015
+#define ATmega8535      0x150016
 
-#define ATmega8         0x03001A
-#define ATmega161       0x030020
-#define ATmega163       0x030021
-#define ATmega16        0x030022
-#define ATmega323       0x030023
-#define ATmega32        0x030024
-#define ATmega162       0x030025
-#define ATmega169       0x030026
-#define ATmega164       0x030027
-#define ATmega324       0x030028
-#define ATmega644       0x030029
+#define ATmega8         0x15001A
+#define ATmega161       0x150020
+#define ATmega163       0x150021
+#define ATmega16        0x150022
+#define ATmega323       0x150023
+#define ATmega32        0x150024
+#define ATmega162       0x150025
+#define ATmega169       0x150026
+#define ATmega164       0x150027
+#define ATmega324       0x150028
+#define ATmega644       0x150029
 
-#define ATmega64        0x03002A
-#define ATmega128       0x030030
+#define ATmega64        0x15002A
+#define ATmega128       0x150030
 
-#define ATmega48        0x030031
-#define ATmega88        0x030032
-#define ATmega168       0x030033
-#define ATmega640       0x030034
-#define ATmega1280      0x030035
-#define ATmega1281      0x030036
-#define ATmega2560      0x030037
-#define ATmega2561      0x030038
-#define ATmega328       0x030039 // new (RG 22.06.2012)
+#define ATmega48        0x150031
+#define ATmega88        0x150032
+#define ATmega168       0x150033
+#define ATmega640       0x150034
+#define ATmega1280      0x150035
+#define ATmega1281      0x150036
+#define ATmega2560      0x150037
+#define ATmega2561      0x150038
+#define ATmega328       0x150039 // new (RG 22.06.2012)
 
-#define ATtiny11        0x030080
-#define ATtiny10        0x030081
-#define ATtiny28        0x030082
-#define ATtiny26        0x030083
-#define ATtiny2313      0x030084
-#define ATtiny25        0x030085
-#define ATtiny45        0x030086
-#define ATtiny85        0x030087
-#define ATtiny261       0x030088
-#define ATtiny461       0x030089
-#define ATtiny861       0x03008A
+#define ATtiny11        0x140080
+#define ATtiny10        0x140081
+#define ATtiny28        0x140082
+#define ATtiny26        0x140083
+#define ATtiny2313      0x140084
+#define ATtiny25        0x140085
+#define ATtiny45        0x140086
+#define ATtiny85        0x140087
+#define ATtiny261       0x140088
+#define ATtiny461       0x140089
+#define ATtiny861       0x14008A
 
 #define AT90CAN32       0x030100
 #define AT90CAN64       0x030101
@@ -259,7 +261,7 @@
 // Sub types
 #define E2401_B         0x130001
 
-#define NO_OF_EEPTYPE   0x13
+#define NO_OF_EEPTYPE   0x15
 
 #define MAXEEPSUBTYPE   64
 

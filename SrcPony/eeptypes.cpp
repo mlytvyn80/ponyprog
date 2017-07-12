@@ -83,25 +83,8 @@ static QVector<chipInfo> const eep24xx5_map =
 	{"24645", E24645, 32, -1, -1, -1}
 };
 
-
-static QVector<chipInfo> const eepAt90s_map =
+static QVector<chipInfo> const eepAVRMega_map =
 {
-	//      "AVR  Auto", AT90S0000
-	{"AT90S1200", AT90S1200, (KB(1) + 64), KB(1), 0, -1},
-	{"AT90S2313", AT90S2313, (KB(2) + 128), KB(2), 0, -1},
-	{"AT90S2323", AT90S2323, (KB(2) + 128), KB(2), 0, -1},
-	{"AT90S2333", AT90S2333, (KB(2) + 128), KB(2), 0, -1},
-	{"AT90S2343", AT90S2343, (KB(2) + 128), KB(2), 0, -1},
-	{"AT90S4414", AT90S4414, (KB(4) + 256), KB(4), 0, -1},
-	{"AT90S4433", AT90S4433, (KB(4) + 256), KB(4), 0, -1},
-	{"AT90S4434", AT90S4434, (KB(4) + 256), KB(4), 0, -1},
-	{"AT90S8515", AT90S8515, (KB(8) + 512), KB(8), 0, -1},
-	{"AT90C8534", AT90S8534, (KB(8) + 512), KB(8), 0, -1},
-	{"AT90S8535", AT90S8535, (KB(8) + 512), KB(8), 0, -1},
-	{"AT90CAN32", AT90CAN32, (KB(32) + KB(1)), KB(32), 128, -1},
-	{"AT90CAN64", AT90CAN64, (KB(64) + KB(2)), KB(64), 256, -1},
-	{"AT90CAN128", AT90CAN128, (KB(128) + KB(4)), KB(128), 256, -1},
-
 	{"ATmega8515", ATmega8515, (KB(8) + 512), KB(8), 64, -1 },
 	{"ATmega8535", ATmega8535, (KB(8) + 512), KB(8), 64, -1 },
 	{"ATmega48", ATmega48, (KB(4) + 256), KB(4), 64, -1},
@@ -128,8 +111,11 @@ static QVector<chipInfo> const eepAt90s_map =
 	{"ATmega1280", ATmega1280, (KB(128) + KB(4)), KB(128), 256, -1},
 	{"ATmega1281", ATmega1281, (KB(128) + KB(4)), KB(128), 256, -1},
 	{"ATmega2560", ATmega2560, (KB(256) + KB(4)), KB(256), 256, -1},
-	{"ATmega2561", ATmega2561, (KB(256) + KB(4)), KB(256), 256, -1},
+	{"ATmega2561", ATmega2561, (KB(256) + KB(4)), KB(256), 256, -1}
+};
 
+static QVector<chipInfo> const eepAVRTiny_map =
+{
 	{"ATtiny12", ATtiny12, (KB(1) + 64), KB(1), 0, -1},
 	{"ATtiny13", ATtiny13, (KB(1) + 64), KB(1), 32, -1},
 	{"ATtiny15", ATtiny15, (KB(1) + 64), KB(1), 0, -1},
@@ -143,6 +129,25 @@ static QVector<chipInfo> const eepAt90s_map =
 	{"ATtiny461", ATtiny461, (KB(4) + 256), KB(4), 64, -1},
 	{"ATtiny85", ATtiny85, (KB(8) + 512), KB(8), 64, -1},
 	{"ATtiny861", ATtiny861, (KB(8) + 512), KB(8), 64, -1}
+};
+
+static QVector<chipInfo> const eepAVRAt90_map =
+{
+	//      "AVR  Auto", AT90S0000
+	{"AT90S1200", AT90S1200, (KB(1) + 64), KB(1), 0, -1},
+	{"AT90S2313", AT90S2313, (KB(2) + 128), KB(2), 0, -1},
+	{"AT90S2323", AT90S2323, (KB(2) + 128), KB(2), 0, -1},
+	{"AT90S2333", AT90S2333, (KB(2) + 128), KB(2), 0, -1},
+	{"AT90S2343", AT90S2343, (KB(2) + 128), KB(2), 0, -1},
+	{"AT90S4414", AT90S4414, (KB(4) + 256), KB(4), 0, -1},
+	{"AT90S4433", AT90S4433, (KB(4) + 256), KB(4), 0, -1},
+	{"AT90S4434", AT90S4434, (KB(4) + 256), KB(4), 0, -1},
+	{"AT90S8515", AT90S8515, (KB(8) + 512), KB(8), 0, -1},
+	{"AT90C8534", AT90S8534, (KB(8) + 512), KB(8), 0, -1},
+	{"AT90S8535", AT90S8535, (KB(8) + 512), KB(8), 0, -1},
+	{"AT90CAN32", AT90CAN32, (KB(32) + KB(1)), KB(32), 128, -1},
+	{"AT90CAN64", AT90CAN64, (KB(64) + KB(2)), KB(64), 256, -1},
+	{"AT90CAN128", AT90CAN128, (KB(128) + KB(4)), KB(128), 256, -1}
 };
 
 
@@ -365,8 +370,16 @@ static QVector<chipInfo> const GetMap(int pritype)
 		return eep24xx5_map;
 		break;
 
-	case AT90SXX:
-		return eepAt90s_map;
+	case AVRTiny:
+		return eepAVRTiny_map;
+		break;
+
+	case AVRMega:
+		return eepAVRMega_map;
+		break;
+
+	case AVRAT90:
+		return eepAVRAt90_map;
 		break;
 
 	case AT89SXX:
