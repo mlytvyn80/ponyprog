@@ -208,6 +208,7 @@ e2CmdWindow::e2CmdWindow(QWidget *parent) :
 	// The Canvas
 	e2HexEdit = new QHexEdit(this); //e2TextCanvasPane(this);
 	setCentralWidget(e2HexEdit);
+	e2HexEdit->setFocus();
 
 	// create all signals, from e2HexEdit too
 	createSignalSlotConnections();
@@ -4346,7 +4347,7 @@ int e2CmdWindow::CmdRunScript(bool test_mode)
 			{
 				if (n >= 4)
 				{
-					long from, val, to;
+					long val, from = 0, to = 0;
 					bool ok = true;
 
 					val = lst.at(1).toLong(&ok, 0);
