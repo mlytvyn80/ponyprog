@@ -1204,7 +1204,7 @@ QVector<ChipBits> fuseModalDialog::eep_bits =
 	},
 
 	{
-		{ ATtiny2313 },
+		{ ATtiny2313, ATtiny4313 }, // ATtiny4313 new 16.09.2015 @RG, EK : possible diff descriptions for bit combinations
 		{
 			// fuse
 			{ 0, "CKSEL0", "" },
@@ -1290,7 +1290,7 @@ QVector<ChipBits> fuseModalDialog::eep_bits =
 		}
 	},
 	{
-		{ ATtiny25 },
+		{ ATtiny24, ATtiny25, ATtiny44, ATtiny84 }, // new 08.01.2015 @RG, EK : possible diff descriptions for bit combinations
 		{
 			// fuse
 			{ 0, "CKSEL0", "" },
@@ -2443,7 +2443,7 @@ QVector<ChipBits> fuseModalDialog::eep_bits =
 	},
 
 	{
-		{ ATmega644 },
+		{ ATmega644, ATmega1284 }, // new (RG 10.06.2017), EK : possible diff descriptions for bit combinations
 		{
 			// fuse
 			{ 0, "CKSEL0", "" },

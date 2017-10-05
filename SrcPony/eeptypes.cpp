@@ -110,6 +110,7 @@ static QVector<chipInfo> const eepAVRMega_map =
 	{"ATmega128", ATmega128, (KB(128) + KB(4)), KB(128), 256, -1},
 	{"ATmega1280", ATmega1280, (KB(128) + KB(4)), KB(128), 256, -1},
 	{"ATmega1281", ATmega1281, (KB(128) + KB(4)), KB(128), 256, -1},
+	{"ATmega1284", ATmega1284, (KB(128) + KB(4)), KB(128), 256, -1}, // new (RG 10.06.2017)
 	{"ATmega2560", ATmega2560, (KB(256) + KB(4)), KB(256), 256, -1},
 	{"ATmega2561", ATmega2561, (KB(256) + KB(4)), KB(256), 256, -1}
 };
@@ -120,13 +121,17 @@ static QVector<chipInfo> const eepAVRTiny_map =
 	{"ATtiny13", ATtiny13, (KB(1) + 64), KB(1), 32, -1},
 	{"ATtiny15", ATtiny15, (KB(1) + 64), KB(1), 0, -1},
 	{"ATtiny22", ATtiny22, (KB(2) + 128), KB(2), 0, -1},
+	{"ATtiny24", ATtiny24, (KB(2) + 128), KB(2), 32, -1}, // new 08.01.2015 @RG
 	{"ATtiny25", ATtiny25, (KB(2) + 128), KB(2), 32, -1},
 	{"ATtiny26", ATtiny26, (KB(2) + 128), KB(2), 32, -1},
 	{"ATtiny261", ATtiny261, (KB(2) + 128), KB(2), 32, -1},
 	//      {"ATtiny28", ATtiny28, },
 	{"ATtiny2313", ATtiny2313, (KB(2) + 128), KB(2), 32, -1},
+	{"ATtiny4313", ATtiny4313, (KB(4) + 256), KB(4), 64, -1}, // new 16.09.2015 @RG
+	{"ATtiny44", ATtiny44, (KB(4) + 256), KB(4), 64, -1}, // new 08.01.2015 @RG
 	{"ATtiny45", ATtiny45, (KB(4) + 256), KB(4), 64,  -1},
 	{"ATtiny461", ATtiny461, (KB(4) + 256), KB(4), 64, -1},
+	{"ATtiny84", ATtiny84, (KB(8) + 512), KB(8), 64, -1}, // new 08.01.2015 @RG
 	{"ATtiny85", ATtiny85, (KB(8) + 512), KB(8), 64, -1},
 	{"ATtiny861", ATtiny861, (KB(8) + 512), KB(8), 64, -1}
 };

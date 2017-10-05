@@ -96,7 +96,6 @@ int At90sBus::ReadProgByte(long addr)
 
 	//Se fosse little-endian sarebbe l'inverso
 #ifdef  _BIG_ENDIAN_
-
 	if (!lsb)
 #else
 	if (lsb)
@@ -110,7 +109,6 @@ int At90sBus::ReadProgByte(long addr)
 		SendDataByte(ReadProgMemL0);
 		SendDataByte(ReadProgMemL1 | (addr >> 8));
 	}
-
 	SendDataByte(addr);
 
 	return RecDataByte();
@@ -125,7 +123,6 @@ void At90sBus::WriteProgByte(long addr, int data)
 
 	//Se fosse little-endian sarebbe l'inverso
 #ifdef  _BIG_ENDIAN_
-
 	if (!lsb)
 #else
 	if (lsb)
@@ -139,7 +136,6 @@ void At90sBus::WriteProgByte(long addr, int data)
 		SendDataByte(WriteProgMemL0);
 		SendDataByte(WriteProgMemL1 | (addr >> 8));
 	}
-
 	SendDataByte(addr);
 	SendDataByte(data);
 }
@@ -209,7 +205,6 @@ int At90sBus::Reset()
 			}
 		}
 	}
-
 	return success_flag ? 1 : 0;
 }
 
@@ -246,8 +241,12 @@ int At90sBus::WriteLockBits(uint32_t param, long model)
 		break;
 
 	case ATtiny2313:
+	case ATtiny4313: // new ATtiny4313 16.09.2015 @RG
 	case ATtiny26:
 	case ATtiny13:
+	case ATtiny24:
+	case ATtiny44:
+	case ATtiny84: //new 08.01.2015 @RG
 	case ATtiny25:
 	case ATtiny45:
 	case ATtiny85:
@@ -279,6 +278,7 @@ int At90sBus::WriteLockBits(uint32_t param, long model)
 	case ATmega164:
 	case ATmega324:
 	case ATmega644:
+	case ATmega1284: // new ATmega1284P (RG 10.06.2017)
 	case ATmega640:
 	case ATmega1280:
 	case ATmega1281:
@@ -393,6 +393,10 @@ int At90sBus::WriteFuseBits(uint32_t param, long model)
 
 	//Three byte fuse
 	case ATtiny2313:
+	case ATtiny4313: // new ATtiny4313 16.09.2015 @RG
+	case ATtiny24:
+	case ATtiny44:
+	case ATtiny84: // new 08.01.2015 @RG
 	case ATtiny25:
 	case ATtiny45:
 	case ATtiny85:
@@ -410,6 +414,7 @@ int At90sBus::WriteFuseBits(uint32_t param, long model)
 	case ATmega164:
 	case ATmega324:
 	case ATmega644:
+	case ATmega1284: // new ATmega1284P (RG 10.06.2017)
 	case AT90CAN32:
 	case AT90CAN64:
 	case AT90CAN128:
@@ -547,6 +552,10 @@ uint32_t At90sBus::ReadFuseBits(long model)
 
 	//Three byte fuse
 	case ATtiny2313:
+	case ATtiny4313: // new ATtiny4313 16.09.2015 @RG
+	case ATtiny24:
+	case ATtiny44:
+	case ATtiny84: // new 08.01.2015 @RG
 	case ATtiny25:
 	case ATtiny45:
 	case ATtiny85:
@@ -564,6 +573,7 @@ uint32_t At90sBus::ReadFuseBits(long model)
 	case ATmega164:
 	case ATmega324:
 	case ATmega644:
+	case ATmega1284: // new ATmega1284 (RG 10.06.2017)
 	case AT90CAN32:
 	case AT90CAN64:
 	case AT90CAN128:
@@ -660,6 +670,10 @@ uint32_t At90sBus::ReadLockBits(long model)
 	case ATtiny13:
 	case ATtiny26:
 	case ATtiny2313:
+	case ATtiny4313: // new ATtiny4313 16.09.2015 @RG
+	case ATtiny24:
+	case ATtiny44:
+	case ATtiny84: // new 08.01.2015 @RG
 	case ATtiny25:
 	case ATtiny45:
 	case ATtiny85:
@@ -692,6 +706,7 @@ uint32_t At90sBus::ReadLockBits(long model)
 	case ATmega164:
 	case ATmega324:
 	case ATmega644:
+	case ATmega1284: // new ATmega1284 (RG 10.06.2017)
 	case AT90CAN32:
 	case AT90CAN64:
 	case AT90CAN128:
