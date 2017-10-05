@@ -3122,11 +3122,14 @@ int e2CmdWindow::CmdReadCalibration(int idx)
 		long loc;
 		int size;
 		bool mtype;
+		bool enabled;
 
 		loc = 0;
 		size = 1;
 		mtype = false;
-		E2Profile::GetCalibrationAddress(loc, size, mtype);
+		enabled = false;
+
+		E2Profile::GetCalibrationAddress(enabled, loc, size, mtype);
 
 		if (mtype)
 		{
@@ -3137,7 +3140,7 @@ int e2CmdWindow::CmdReadCalibration(int idx)
 
 		if (rval >= 0)
 		{
-			if ((size > 0 && size <= 4) &&
+			if (enabled && (size > 0 && size <= 4) &&
 					(loc + size <= awip->GetBufSize())
 			   )
 			{
@@ -4274,7 +4277,8 @@ int e2CmdWindow::CmdRunScript(bool test_mode)
 				long start = 0;
 				int size = 1;
 				bool mtype = false;
-				E2Profile::GetCalibrationAddress(start, size, mtype);
+				bool enabled = false;
+				E2Profile::GetCalibrationAddress(enabled, start, size, mtype);
 
 				int osc_index = 0;
 				bool ok = true;
@@ -4297,7 +4301,7 @@ int e2CmdWindow::CmdRunScript(bool test_mode)
 
 					if (ok && !test_mode)
 					{
-						E2Profile::SetCalibrationAddress(start, size, mtype);
+						E2Profile::SetCalibrationAddress(enabled, start, size, mtype);
 					}
 
 					if (ok && n >= 4)
