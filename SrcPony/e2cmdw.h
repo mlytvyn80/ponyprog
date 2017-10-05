@@ -217,20 +217,8 @@ class e2CmdWindow : public QMainWindow, public e2App, public Ui::MainWindow
 	void onDevType(int i);
 	void onDevSubType(int i);
 
-	// EK 2017: slots for signals from group actions
-	void onSelectI2C8(QAction *a);
-	void onSelectI2C16(QAction *a);
-	void onSelectI2CAT17(QAction *a);
-	void onSelectMW16(QAction *a);
-	void onSelectMW8(QAction *a);
-	void onSelectSPI(QAction *a);
-	void onSelectAVR(QAction *a);
-	void onSelectAT89S(QAction *a);
-	void onSelectPIC16(QAction *a);
-	void onSelectPIC12(QAction *a);
-	void onSelectImBus(QAction *a);
-	void onSelectSDE2506(QAction *a);
-	void onSelectX244(QAction *a);
+	// EK 2017: slot for signals from group actions
+	void onSelectChip(QAction *a);
 
 	//void onEndProgress();
 
@@ -299,7 +287,7 @@ class e2CmdWindow : public QMainWindow, public e2App, public Ui::MainWindow
 
 	int findItemInMenuVector(const QString &n);
 
-	void initMenuVector(menuToGroup *vecMnu);
+	void addMenuVector(menuToGroup *vecMnu);
 
 	bool readLangDir();
 	bool getLangTable();
@@ -368,26 +356,12 @@ class e2CmdWindow : public QMainWindow, public e2App, public Ui::MainWindow
 
 	//      int CoordToIndex(int row, int col);
 	//      void IndexToCoord(int index, int &row, int &col);
-	void setMenuIndexes();
+// 	void setMenuIndexes();
 	void selectTypeSubtype(const QString &t, const QString &st);
 	int ScriptError(int line_number, int arg_index, const QString &s, const QString msg = "");
 
 
   private:
-	int idxI2Cbus8;
-	int idxI2Cbus16;
-	int idxI2CbusAT17;
-	int idxMicroWire16;
-	int idxMicroWire8;
-	int idxSPI;
-	int idxAVR;
-	int idxAT89S;
-	int idxPIC16;
-	int idxPIC12;
-	int idxImBus;
-	int idxSDE2506;
-	int idxX244;
-
 	QString selectedLang;
 
 	QFont sysFont;
